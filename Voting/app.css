@@ -6,9 +6,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-
   min-height: 100vh;
-
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/93/India_Map_Animation_Created_by_samnad.s_Kudappanamoodu.gif");
   background-position: center;
   background-repeat: no-repeat;
@@ -18,12 +16,10 @@ body {
 
 .App {
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   padding: 20px;
 }
 
@@ -37,14 +33,16 @@ body {
 .vote-table-card {
   width: 900px;
   max-width: 95%;
-
   background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(3px);
-
   border-radius: 20px;
   padding: 25px;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.vote-table-card:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 .vote-table {
@@ -56,10 +54,11 @@ body {
 .vote-table thead th {
   background: #1d3557;
   color: white;
-
   padding: 15px;
   text-align: center;
   font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .vote-table thead th:first-child {
@@ -72,8 +71,14 @@ body {
 
 .vote-table tbody tr {
   background: rgba(248, 249, 250, 0.85);
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vote-table tbody tr:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 .vote-table tbody td {
@@ -84,66 +89,73 @@ body {
 
 .vote-table tbody td:first-child {
   border-radius: 12px 0 0 12px;
-  font-weight: bold;
   color: #1d3557;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .vote-table tbody td:last-child {
   border-radius: 0 12px 12px 0;
 }
 
-.party-logo {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+.vote-table tbody td:nth-child(2) {
+  color: #555;
+  font-weight: 500;
+}
+
+.vote-table tbody td:nth-child(3) {
+  padding: 10px;
 }
 
 .vote-table tbody td:nth-child(4) {
   font-size: 34px;
   font-weight: bold;
   color: #1d3557;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.party-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: white;
+  border: 2px solid #dfe6ee;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.vote-table tbody tr:hover .party-logo {
+  transform: scale(1.08);
+  border-color: #1565ff;
+  box-shadow: 0 6px 14px rgba(21, 101, 255, 0.25);
+}
+
+.vote-btn,
+.reset-btn {
+  background: #1565ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .vote-btn {
   width: 100px;
-
-  background: #1565ff;
-  color: white;
-
-  border: none;
-  border-radius: 10px;
-
-  padding: 12px;
-
-  cursor: pointer;
-  font-size: 16px;
-
-  transition: 0.3s;
-}
-
-.vote-btn:hover {
-  background: #0048c7;
 }
 
 .reset-btn {
-  margin-top: 20px;
-
   width: 180px;
-
-  background: #1565ff;
-  color: white;
-
-  border: none;
-  border-radius: 10px;
-
-  padding: 12px;
-
-  cursor: pointer;
-  font-size: 16px;
-
-  transition: 0.3s;
+  margin-top: 20px;
 }
 
+.vote-btn:hover,
 .reset-btn:hover {
   background: #0048c7;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(21, 101, 255, 0.35);
 }
