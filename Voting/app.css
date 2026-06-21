@@ -1,99 +1,166 @@
-.App {
-    min-height: 100vh;
-    padding: 2.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.5rem;
-    color: var(--text-h);
-    background-image: url("https://thumbs.dreamstime.com/b/indian-flag-banner-contrasting-background-321217336.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .App h1 {
-    margin: 0;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    letter-spacing: -0.03em;
-  }
-  
-  .vote-table-card {
-    width: min(100%, 900px);
-    background: #ffffffee;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    overflow-x: auto;
-  }
-  
-  .vote-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  
-  .vote-table th,
-  .vote-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: middle;
-  }
-  
-  .vote-table th {
-    background: rgba(170, 59, 255, 0.08);
-    color: var(--text-h);
-    font-weight: 600;
-  }
-  
-  .vote-table tr:nth-child(even) {
-    background: rgba(230, 230, 250, 0.5);
-  }
-  
-  .party-logo {
-    width: 44px;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-  }
-  
-  .vote-btn,
-  .reset-btn {
-    border: 2px solid var(--accent);
-    border-radius: 999px;
-    background: gold;
-    color: #1aabcf;
-    font-weight: 700;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: transform 0.15s ease, background-color 0.25s ease, box-shadow 0.2s ease;
-  }
-  
-  .vote-btn:hover,
-  .vote-btn:focus-visible,
-  .reset-btn:hover,
-  .reset-btn:focus-visible {
-    background: #8e28d7;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.13);
-    outline: none;
-  }
-  
-  .reset-btn {
-    margin-top: 1rem;
-    align-self: flex-end;
-  }
-  
-  @media (max-width: 700px) {
-    .vote-table th,
-    .vote-table td {
-      padding: 8px 10px;
-    }
-  
-    .vote-btn,
-    .reset-btn {
-      padding: 7px 12px;
-    }
-  }
+app.css * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/93/India_Map_Animation_Created_by_samnad.s_Kudappanamoodu.gif");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+.voting-card {
+  width: 700px;
+  max-width: 90%;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(3px);
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.voting-card h1 {
+  text-align: center;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.flag-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.orange {
+  width: 80px;
+  height: 4px;
+  background: orange;
+}
+
+.green {
+  width: 80px;
+  height: 4px;
+  background: green;
+}
+
+.chakra {
+  color: blue;
+  font-size: 24px;
+}
+
+.candidate-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px;
+
+  background: rgba(248, 249, 250, 0.85);
+
+  border-radius: 12px;
+
+  margin-bottom: 15px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.party-info {
+  width: 250px;
+}
+
+.party-info h2 {
+  color: #1d3557;
+  margin-bottom: 5px;
+}
+
+.party-info p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.party-symbol {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.party-symbol img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.party-symbol span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  width: 100px;
+
+  background: #1565ff;
+  color: white;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px;
+
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0048c7;
+}
+
+.votes {
+  width: 80px;
+
+  font-size: 34px;
+  font-weight: bold;
+  color: #1d3557;
+
+  text-align: center;
+}
+
+.votes span {
+  display: block;
+  font-size: 14px;
+  color: gray;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
