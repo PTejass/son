@@ -1,24 +1,51 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-    const bjpSvg = "https://1000logos.net/wp-content/uploads/2022/02/BJP-logo.png";
-
-    const congressSvg = "https://upload.wikimedia.org/wikipedia/commons/a/ad/INC_Logo.png";
-
-    const jdsSvg = "https://i0.wp.com/www.opindia.com/wp-content/uploads/2020/03/MAHALAXMI-ART-CRAFT-JDS-Logo-SDL718561882-1-470d0.jpg?fit=3508%2C2480&ssl=1";
+    const parties = [
+        {
+            id: "option1",
+            name: "Narendra Modi",
+            partyName: "BJP",
+            logo: "https://1000logos.net/wp-content/uploads/2022/02/BJP-logo.png",
+        },
+        {
+            id: "option2",
+            name: "Rahul Gandhi",
+            partyName: "Congress",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/a/ad/INC_Logo.png",
+        },
+        {
+            id: "option3",
+            name: "H. D. Kumaraswamy",
+            partyName: "JDS",
+            logo: "https://i0.wp.com/www.opindia.com/wp-content/uploads/2020/03/MAHALAXMI-ART-CRAFT-JDS-Logo-SDL718561882-1-470d0.jpg?fit=3508%2C2480&ssl=1",
+        },
+        {
+            id: "option4",
+            name: "Yogi Adityanath",
+            partyName: "BSP",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bahujan_Samaj_Party_flag.svg/640px-Bahujan_Samaj_Party_flag.svg.png",
+        },
+        {
+            id: "option5",
+            name: "Naveen Patnaik",
+            partyName: "BJD",
+            logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Biju_Janata_Dal.svg/640px-Biju_Janata_Dal.svg.png",
+        },
+    ];
 
     const [votes, setVotes] = useState({
-        bjp: 0,
-        congress: 0,
-        jds: 0,
+        option1: 0,
+        option2: 0,
+        option3: 0,
     });
 
-    const handleVote = (party) => {
-        setVotes((prevVotes) => ({
-            ...prevVotes,
-            [party]: prevVotes[party] + 1,
-        }));
+    const handleVote = (id) => {
+        setVotes({
+            ...votes,
+            [id]: votes[id] + 1,
+        });
     };
 
     return (
@@ -36,61 +63,37 @@ function App() {
                     <span className="green"></span>
                 </div>
 
-                <div className="candidate-card">
-                    <div className="party-info">
-                        <h2>Narendra Modi</h2>
-                        <p>Bharatiya Janata Party</p>
+                {parties.map((party) => (
+                    <div className="candidate-card" key={party.id}>
+                        <div className="party-info">
+                            <h2>{party.name}</h2>
+                            <p>{party.partyName}</p>
 
-                        <div className="party-symbol">
-                            <img src={bjpSvg} alt="BJP" />
-                            <span>BJP</span>
+                            <div className="party-symbol">
+                                <img src={party.logo} alt={party.partyName} />
+                                <span>{party.partyName}</span>
+                            </div>
+                        </div>
+
+                        <button onClick={() => handleVote(party.id)}>
+                            Vote
+                        </button>
+
+                        <div className="votes">
+                            {votes[party.id]}
+                            <span>votes</span>
                         </div>
                     </div>
+                ))}
 
-                    <button onClick={() => handleVote("bjp")}>Vote</button>
-
-                    <div className="votes">
-                        {votes.bjp}
-                        <span>votes</span>
-                    </div>
-                </div>
-
-                <div className="candidate-card">
-                    <div className="party-info">
-                        <h2>Rahul Gandhi</h2>
-                        <p>Indian National Congress</p>
-
-                        <div className="party-symbol">
-                            <img src={congressSvg} alt="Congress" />
-                            <span>Congress</span>
-                        </div>
-                    </div>
-
-                    <button onClick={() => handleVote("congress")}>Vote</button>
-
-                    <div className="votes">
-                        {votes.congress}
-                        <span>votes</span>
-                    </div>
-                </div>
-
-                <div className="candidate-card">
-                    <div className="party-info">
-                        <h2>H. D. Kumaraswamy</h2>
-                        <p>Janata Dal (Secular)</p>
-
-                        <div className="party-symbol">
-                            <img src={jdsSvg} alt="JDS" />
-                            <span>JDS</span>
-                        </div>
-                    </div>
-
-                    <button onClick={() => handleVote("jds")}>Vote</button>
-
-                    <div className="votes">
-                        {votes.jds}
-                        <span>votes</span>
-                    </div>
+                <div className="reset-container">
+                    <button className="reset-btn" onClick={() => setVotes({
+                        option1: 0,
+                        option2: 0,
+                        option3: 0,
+                    })}>
+                        Reset Votes
+                    </button>
                 </div>
 
                 <div className="footer">
