@@ -7,31 +7,31 @@ function App() {
       id: 'option1',
       name: 'Narendra Modi',
       partyName: 'BJP',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/1/1e/Bharatiya_Janata_Party_logo.svg',
+      logo: 'https://1000logos.net/wp-content/uploads/2022/02/BJP-logo.png',
     },
     {
       id: 'option2',
       name: 'Rahul Gandhi',
       partyName: 'Congress',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Indian_National_Congress_hand_logo.svg',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/INC_Logo.png',
     },
     {
       id: 'option3',
       name: 'HD Kumaraswamy',
       partyName: 'JDS',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Janata_Dal_%28Secular%29_logo.png',
+      logo: 'https://jds.ind.in/en/imgs/downloads/jds_logo.png',
     },
     {
       id: 'option4',
       name: 'Yogi Adityanath',
       partyName: 'BSP',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Janata_Dal_%28Secular%29_logo.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/BSP_Flag.png',
     },
     {
       id: 'option5',
       name: 'Naveen Patnaik',
       partyName: 'BJD',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Janata_Dal_%28Secular%29_logo.png',
+      logo: 'https://votersverdict.com/party_img/1143030_biju_janata_dal_logo.webp',
     },
 
   ];
